@@ -163,7 +163,7 @@
   },
   "variables": {
     "ContainerImageName": "redis/redis-stack-server:latest",
-    "WebAppImageName": "DOCKER|fruocco/oai-embeddings",
+    "WebAppImageName": "DOCKER|innovation/oai-embeddings",
     "BlobContainerName": "documents",
     "FileShareName": "redisdata",
     "QueueName": "doc-processing",
@@ -386,7 +386,7 @@
             ]
           },
           "use32BitWorkerProcess": false,
-          "linuxFxVersion": "DOCKER|fruocco/oai-batch:latest",
+          "linuxFxVersion": "DOCKER|innovation/oai-batch:latest",
           "appCommandLine": "",
           "alwaysOn": true
         },
