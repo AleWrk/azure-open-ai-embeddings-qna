@@ -24,7 +24,8 @@ if input_text:
     input_text = ""
     question, result, _, sources = llm_helper.get_semantic_answer_lang_chain(question, st.session_state['chat_history'])
     st.session_state['chat_history'].append((question, result))
-    st.session_state['source_documents'].append(sources)
+    if len(source)>1:
+        st.session_state['source_documents'].append(sources)
 
 if st.session_state['chat_history']:
     for i in range(len(st.session_state['chat_history'])-1, -1, -1):
