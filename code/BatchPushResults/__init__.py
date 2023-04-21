@@ -7,7 +7,7 @@ def main(msg: func.QueueMessage) -> None:
                  msg.get_body().decode('utf-8'))
 
     # Wait 3 seconds for quota exceed
-    time.sleep(3)
+    time.sleep(60)
     
     # Set up LLM Helper
     llm_helper = LLMHelper()
