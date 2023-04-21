@@ -6,7 +6,7 @@ def main(msg: func.QueueMessage) -> None:
     logging.info('Python queue trigger function processed a queue item: %s',
                  msg.get_body().decode('utf-8'))
 
-    # Wait 3 seconds for quota exceed
+    # Wait 60 seconds for quota exceed
     time.sleep(60)
     
     # Set up LLM Helper
