@@ -1,4 +1,4 @@
-import os, time
+import os
 import openai
 from dotenv import load_dotenv
 import logging
@@ -118,8 +118,7 @@ class LLMHelper:
                 hash_key = f"doc:{self.index_name}:{hash_key}"
                 keys.append(hash_key)
                 doc.metadata = {"source": f"[{source_url}]({source_url}_SAS_TOKEN_PLACEHOLDER_)" , "chunk": i, "key": hash_key, "filename": filename}
-                time.sleep(10)
-                self.vector_store.add_documents(documents=[doc], redis_url=self.vector_store_full_address,  index_name=self.index_name, keys=[hash_key])
+            self.vector_store.add_documents(documents=docs, redis_url=self.vector_store_full_address,  index_name=self.index_name, keys=keys)
         except Exception as e:
             logging.error(f"Error adding embeddings for {source_url}: {e}")
             raise e
